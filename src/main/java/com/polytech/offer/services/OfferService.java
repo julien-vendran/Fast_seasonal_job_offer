@@ -21,14 +21,7 @@ public class OfferService {
         return offerRepository.findById(offerId);
     }
 
-    public OfferEntity createOffer(OfferEntity offerEntity){
-        return offerRepository.save(offerEntity);
-    }
-
-    public OfferEntity modify(OfferEntity offerEntity){
-        if (offerRepository.existsById(offerEntity.getIdOffer())){
-            offerRepository.delete(offerEntity);
-        }
+    public OfferEntity createOrUpdate(OfferEntity offerEntity){
         return offerRepository.save(offerEntity);
     }
 
