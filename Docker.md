@@ -13,3 +13,17 @@ Il faut ensuite lancer un container à partir de cette image
 ```shell
 docker run -p 8080:8080 fast_seasonal_job/offer
 ```
+
+## Postgres 
+Pour avoir accès aux données, il faut créer une base de données postgresql dans docker 
+```shell
+docker run --name postgres-db -e POSTGRES_PASSWORD=docker -p 5436:5436 -d postgres
+```
+Host: *localhost*  
+Port: *5436*  
+User: *postgres*  
+Password: *docker*
+
+Pour accéder au terminal du container depuis un terminal
+```shell
+docker exec -it <container-name> bash
