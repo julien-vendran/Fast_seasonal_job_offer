@@ -1,12 +1,12 @@
 package com.polytech.offer.controllers;
 
-import com.polytech.offer.models.OfferModel;
+import com.polytech.offer.entity.OfferEntity;
 import com.polytech.offer.services.OfferService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @RequestMapping("/offer")
@@ -17,26 +17,26 @@ public class OfferController {
     private OfferService offerService;
 
     @GetMapping("/getAll")
-    public List<OfferModel> getAllOffer(){
+    public Iterable<OfferEntity> getAllOffer(){
         return offerService.getAll();
     }
 
     @GetMapping("/getById")
-    public OfferModel getOfferById(@RequestParam Long offerId){
-        return offerService.getById(offerId);
+    public Optional<OfferEntity> getOfferById(@RequestParam String offerId){
+        return offerService.getById(Long.getLong(offerId));
     }
     @PostMapping("/create")
-    public OfferModel createOffer(@RequestBody OfferModel offerModel){
-        return offerService.createOffer(offerModel);
+    public OfferEntity createOffer(@RequestBody OfferEntity offerEntity){
+        return offerService.createOffer(offerEntity);
     }
 
     @PutMapping("/modify")
-    public OfferModel modifyOffer(@RequestBody OfferModel offerModel){
-        return offerService.modify(offerModel);
+    public OfferEntity modifyOffer(@RequestBody OfferEntity offerEntity){
+        return offerService.modify(offerEntity);
     }
 
     @DeleteMapping("/deleteById")
-    public void deleteOffer(@RequestParam Long offerId){
-        offerService.delete(offerId);
+    public void deleteOffer(@RequestParam String offerId){
+        offerService.delete(Long.getLong(offerId));
     }
 }
