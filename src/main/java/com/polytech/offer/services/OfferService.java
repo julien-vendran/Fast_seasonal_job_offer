@@ -1,12 +1,11 @@
 package com.polytech.offer.services;
 
-import com.polytech.offer.models.OfferModel;
+import com.polytech.offer.entity.OfferEntity;
 import com.polytech.offer.repository.OfferRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
 
 @Service
 public class OfferService {
@@ -14,24 +13,27 @@ public class OfferService {
     @Autowired
     private OfferRepository offerRepository;
 
-    public List<OfferModel> getAll(){
-        return new ArrayList<>();
+    public Iterable<OfferEntity> getAll(){
+        return offerRepository.findAll();
     }
 
-    public OfferModel getById(Long offerId){
-        return new OfferModel();
+    public Optional<OfferEntity> getById(Long offerId){
+        return offerRepository.findById(offerId);
     }
 
-    public OfferModel createOffer(OfferModel offerModel){
-        return new OfferModel();
+    public OfferEntity createOffer(OfferEntity offerEntity){
+        return offerRepository.save(offerEntity);
     }
 
-    public OfferModel modify(OfferModel offerModel){
-        return new OfferModel();
+    public OfferEntity modify(OfferEntity offerEntity){
+        if (offerRepository.existsById(offerEntity.getIdOffer())){
+            offerRepository.delete(offerEntity);
+        }
+        return offerRepository.save(offerEntity);
     }
 
     public void delete(Long offerId){
-
+        offerRepository.deleteById(offerId);
     }
 
 
