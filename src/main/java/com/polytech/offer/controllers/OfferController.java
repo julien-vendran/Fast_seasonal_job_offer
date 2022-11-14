@@ -16,27 +16,22 @@ public class OfferController {
     @Autowired
     private OfferService offerService;
 
-    @GetMapping("/getAll")
-    public Iterable<OfferEntity> getAllOffer(){
+    @GetMapping("")
+    public Iterable<OfferEntity> getAll(){
         return offerService.getAll();
     }
 
     @GetMapping("/getById")
-    public Optional<OfferEntity> getOfferById(@RequestParam String offerId){
+    public Optional<OfferEntity> getById(@RequestParam String offerId){
         return offerService.getById(Long.getLong(offerId));
     }
-    @PostMapping("/create")
-    public OfferEntity createOffer(@RequestBody OfferEntity offerEntity){
-        return offerService.createOffer(offerEntity);
-    }
-
-    @PutMapping("/modify")
-    public OfferEntity modifyOffer(@RequestBody OfferEntity offerEntity){
-        return offerService.modify(offerEntity);
+    @PostMapping("/createOrUpdate")
+    public OfferEntity createOrUpdate(@RequestBody OfferEntity offerEntity){
+        return offerService.createOrUpdate(offerEntity);
     }
 
     @DeleteMapping("/deleteById")
-    public void deleteOffer(@RequestParam String offerId){
+    public void delete(@RequestParam String offerId){
         offerService.delete(Long.getLong(offerId));
     }
 }

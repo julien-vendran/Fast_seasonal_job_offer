@@ -13,7 +13,7 @@ import java.util.Date;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Setter
-@Table(name = "OFFER")
+@Table(name = "offer")
 public class OfferEntity {
 
     @Id
@@ -27,16 +27,16 @@ public class OfferEntity {
     @Column(name = "description",length=1000, nullable = false)
     private String description;
 
-    @Column(name = "publishDay", nullable = false)
+    @Column(name = "publishday", nullable = false)
     private Date publishDay;
 
-    @Column(name = "jobStartingDate", nullable = false)
+    @Column(name = "jobStartingdate", nullable = false)
     private Date jobStartingDate;
 
     @Column(name = "location", length=100, nullable = false)
     private String location;
 
-    @Column(name = "jobNumber", nullable = false)
+    @Column(name = "jobnumber", nullable = false)
     private Integer jobNumber;
 
     @Column(name = "salary", nullable = false)
