@@ -27,16 +27,16 @@ public class OfferEntity {
     @Column(name = "description",length=1000, nullable = false)
     private String description;
 
-    @Column(name = "publishday", nullable = false)
+    @Column(name = "publishDay", nullable = false)
     private Date publishDay;
 
-    @Column(name = "jobStartingdate", nullable = false)
+    @Column(name = "jobStartingDate", nullable = false)
     private Date jobStartingDate;
 
     @Column(name = "location", length=100, nullable = false)
     private String location;
 
-    @Column(name = "jobnumber", nullable = false)
+    @Column(name = "jobNumber", nullable = false)
     private Integer jobNumber;
 
     @Column(name = "salary", nullable = false)
