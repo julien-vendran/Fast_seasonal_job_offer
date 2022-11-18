@@ -17,10 +17,10 @@ docker run -p 8080:8080 fast_seasonal_job/offer
 ## Postgres 
 Pour avoir accès aux données, il faut créer une base de données postgresql dans docker 
 ```shell
-docker run --name postgres-db -e POSTGRES_PASSWORD=docker -p 5436:5436 -d postgres
+docker run --name postgres-db -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
 ```
 Host: *localhost*  
-Port: *5436*  
+Port: *5432*  
 User: *postgres*  
 Password: *docker*
 

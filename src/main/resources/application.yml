@@ -1,6 +1,5 @@
 spring:
   datasource:
-    hikari:
-      url: jdbc:postgresql://localhost:5436/postgres
-      username: postgres
-      password: docker
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: docker
