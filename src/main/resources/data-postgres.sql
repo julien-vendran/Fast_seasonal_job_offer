@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS fast_seasonal;
 CREATE DATABASE fast_seasonal;
 
 DROP TABLE IF EXISTS offer;
@@ -17,3 +18,5 @@ CREATE TABLE offer
     author VARCHAR(50),
     keywords VARCHAR(100)
 );
+
+CREATE SEQUENCE hibernate_sequence START 1;
