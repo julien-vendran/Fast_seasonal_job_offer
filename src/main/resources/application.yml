@@ -1,5 +1,11 @@
+server.port: 8081
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
     password: docker
+
+kafka:
+  bootstrapAddress: http://localhost:9092
+

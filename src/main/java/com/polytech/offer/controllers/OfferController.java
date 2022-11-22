@@ -3,16 +3,24 @@ package com.polytech.offer.controllers;
 import com.polytech.offer.entity.OfferEntity;
 import com.polytech.offer.services.OfferService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.Optional;
 
 @RequiredArgsConstructor
-@RequestMapping("/offer")
+@RequestMapping("/api/offer")
 @RestController
+@Slf4j
 public class OfferController {
 
-    private OfferService offerService;
+    private final OfferService offerService;
+
+    @GetMapping("/testLink")
+    public String testMethod(){
+        return "le test fonctionne";
+    }
 
     @GetMapping()
     public Iterable<OfferEntity> getAll(){
