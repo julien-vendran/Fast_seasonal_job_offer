@@ -12,14 +12,13 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @RequestMapping("/api/offer")
 @RestController
-@Slf4j
 public class OfferController {
 
     private final OfferService offerService;
 
-    @GetMapping("/testLink")
+    @GetMapping("/else")
     public String testMethod(){
-        return "le test fonctionne";
+        return "No error";
     }
 
     @GetMapping()
