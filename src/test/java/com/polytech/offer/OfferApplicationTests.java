@@ -12,6 +12,7 @@ import static org.assertj.core.api.Assertions.*;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class OfferApplicationTests {
 
+    //faire des tests en utilisant un serveur web
     @LocalServerPort
     private int port;
     @Autowired
@@ -26,7 +27,7 @@ class OfferApplicationTests {
 
     @Test
     public void greetingShouldReturnDefaultMessage() throws Exception {
-        assertThat(this.restTemplate.getForObject("http://localhost:"+port+"/api/offer/test",String.class)).contains("hello ça marche");
+        assertThat(this.restTemplate.getForObject("http://localhost:"+port+"/api/offer/else",String.class)).contains("No error");
     }
 
 }
