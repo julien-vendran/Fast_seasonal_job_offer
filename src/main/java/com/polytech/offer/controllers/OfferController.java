@@ -4,6 +4,8 @@ import com.polytech.offer.entity.OfferEntity;
 import com.polytech.offer.services.OfferService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.security.RolesAllowed;
@@ -14,11 +16,12 @@ import java.util.Optional;
 @RestController
 public class OfferController {
 
-    private final OfferService offerService;
+    @Autowired
+    private OfferService offerService;
 
     @GetMapping("/else")
     public String testMethod(){
-        return "No error";
+        return offerService.health();
     }
 
     @GetMapping()
@@ -26,17 +29,17 @@ public class OfferController {
         return offerService.getAll();
     }
 
-    @GetMapping("/getById")
-    public Optional<OfferEntity> getById(@RequestParam Long offerId){
-        return offerService.getById(offerId);
+    @GetMapping("/getById/{id}")
+    public Optional<OfferEntity> getById(@PathVariable Long id){
+        return offerService.getById(id);
     }
     @PostMapping("/createOrUpdate")
     public OfferEntity createOrUpdate(@RequestBody OfferEntity offerEntity){
         return offerService.createOrUpdate(offerEntity);
     }
 
-    @DeleteMapping("/deleteById")
-    public void delete(@RequestParam Long offerId){
-        offerService.delete(offerId);
+    @DeleteMapping("/deleteById/{id}")
+    public void delete(@PathVariable Long id){
+        offerService.delete(id);
     }
 }

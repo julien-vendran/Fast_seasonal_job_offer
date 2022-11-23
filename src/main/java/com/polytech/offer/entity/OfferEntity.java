@@ -18,7 +18,7 @@ public class OfferEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @Column(name = "idoffer")
     private Long idOffer;
 
     @Column(name = "title",length=100, nullable = false)
@@ -27,17 +27,17 @@ public class OfferEntity {
     @Column(name = "description",length=1000, nullable = false)
     private String description;
 
-    @Column(name = "publishDay", nullable = false)
+    @Column(name = "publishday")
     private Date publishDay;
 
-    @Column(name = "jobStartingDate", nullable = false)
+    @Column(name = "jobstartingdate")
     private Date jobStartingDate;
 
     @Column(name = "location", length=100, nullable = false)
     private String location;
 
-    @Column(name = "jobNumber", nullable = false)
-    private Integer jobNumber;
+    @Column(name = "jobnumber")
+    private Integer jobnumber;
 
     @Column(name = "salary", nullable = false)
     private Double salary;
@@ -57,3 +57,18 @@ public class OfferEntity {
     @Column(name = "keywords",length=100, nullable = false)
     private String keywords;
 }
+
+/*{
+    "title":"dev",
+    "description":"stage de dev",
+    "publishDay":"12/12/2012",
+    "jobStartingDate":"12/12/2022",
+    "location":"Montpellier"
+    "jobNumber":2,
+    "salary": 1200.3,
+    "advantages":"tickets restau",
+    "job":"dev java",
+    "zones":"Occitanie",
+    "author":"moi",
+    "keywords":"dev ambiance"
+}*/
