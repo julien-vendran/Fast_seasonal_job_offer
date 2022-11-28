@@ -73,6 +73,5 @@ public class ServiceTest {
         OfferEntity returnedOffer = offerService.createOrUpdate(mockOffer);
 
         Assertions.assertNotNull(returnedOffer, "saved offer should be not null");
-        //Assertions.assertEquals(1, returnedOffer.getVersion().intValue(),"the version should be 1");
     }
 }

@@ -44,15 +44,5 @@ CREATE TABLE recruiter
     email       VARCHAR(100)
 );
 
-DROP TABLE IF EXISTS grade;
-CREATE TABLE grade
-(
-    FOREIGN KEY (idRecruiter) REFERENCES recruiter(id),
-    FOREIGN KEY (idJobseeker) REFERENCES jobseeker(id),
-    mark       FLOAT,
-    comment    VARCHAR(200),
-    PRIMARY KEY (idRecruiter, idJobseeker)
-);
-
 
 CREATE SEQUENCE hibernate_sequence START 1;
