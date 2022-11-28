@@ -16,8 +16,7 @@ import java.util.Optional;
 @RestController
 public class OfferController {
 
-    @Autowired
-    private OfferService offerService;
+    private final OfferService offerService;
 
     @GetMapping()
     public Iterable<OfferEntity> getAll(){
