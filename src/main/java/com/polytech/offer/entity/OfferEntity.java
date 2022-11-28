@@ -58,17 +58,3 @@ public class OfferEntity {
     private String keywords;
 }
 
-/*{
-    "title":"dev",
-    "description":"stage de dev",
-    "publishDay":"12/12/2012",
-    "jobStartingDate":"12/12/2022",
-    "location":"Montpellier"
-    "jobNumber":2,
-    "salary": 1200.3,
-    "advantages":"tickets restau",
-    "job":"dev java",
-    "zones":"Occitanie",
-    "author":"moi",
-    "keywords":"dev ambiance"
-}*/

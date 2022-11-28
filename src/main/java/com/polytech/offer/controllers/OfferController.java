@@ -19,26 +19,21 @@ public class OfferController {
     @Autowired
     private OfferService offerService;
 
-    @GetMapping("/else")
-    public String testMethod(){
-        return offerService.health();
-    }
-
     @GetMapping()
     public Iterable<OfferEntity> getAll(){
         return offerService.getAll();
     }
 
-    @GetMapping("/getById/{id}")
+    @GetMapping("/{id}")
     public Optional<OfferEntity> getById(@PathVariable Long id){
         return offerService.getById(id);
     }
-    @PostMapping("/createOrUpdate")
+    @PostMapping()
     public OfferEntity createOrUpdate(@RequestBody OfferEntity offerEntity){
         return offerService.createOrUpdate(offerEntity);
     }
 
-    @DeleteMapping("/deleteById/{id}")
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id){
         offerService.delete(id);
     }

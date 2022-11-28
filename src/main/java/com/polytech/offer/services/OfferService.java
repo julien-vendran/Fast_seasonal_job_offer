@@ -15,9 +15,6 @@ public class OfferService {
 
     private final OfferRepository offerRepository;
 
-    public String health(){
-        return "No error";
-    }
     public Iterable<OfferEntity> getAll(){
         return offerRepository.findAll();
     }

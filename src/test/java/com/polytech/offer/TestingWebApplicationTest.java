@@ -19,7 +19,6 @@ public class TestingWebApplicationTest {
     @Autowired
     private MockMvc mockMvc;
 
-    //tester ce qu'il y a derrière le serveur web sans le démarrer
     @Test
     public void shouldReturnDefaultMessage() throws Exception {
         this.mockMvc.perform(get("/api/offer/else")).andDo(print())

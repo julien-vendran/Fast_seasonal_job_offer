@@ -12,7 +12,6 @@ import static org.assertj.core.api.Assertions.*;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class OfferApplicationTests {
 
-    //faire des tests en utilisant un serveur web
     @LocalServerPort
     private int port;
     @Autowired
