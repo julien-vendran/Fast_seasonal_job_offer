@@ -10,7 +10,7 @@ CREATE TABLE cv
     data         OID
 );
 
-DROP TABLE IF EXISTS jobseeker;
+DROP TABLE IF EXISTS jobseeker CASCADE;
 CREATE TABLE jobseeker
 (
     id        SERIAL PRIMARY KEY,
@@ -26,7 +26,7 @@ CREATE TABLE jobseeker
     FOREIGN KEY (cv_id) REFERENCES cv (id)
 );
 
-DROP TABLE IF EXISTS recruiter;
+DROP TABLE IF EXISTS recruiter CASCADE;
 CREATE TABLE recruiter
 (
     id           SERIAL PRIMARY KEY,
@@ -39,7 +39,7 @@ CREATE TABLE recruiter
     email        VARCHAR(100)
 );
 
-DROP TABLE IF EXISTS grade;
+DROP TABLE IF EXISTS grade CASCADE;
 CREATE TABLE grade
 (
     recruiter BIGINT,
@@ -61,13 +61,14 @@ CREATE TABLE offer
     job_starting_date DATE,
     city              VARCHAR(100),
     region            VARCHAR(100),
-    job_number         INTEGER,
+    job_number        INTEGER,
     salary            FLOAT,
     advantages        VARCHAR(500),
     job               VARCHAR(100),
     zones             VARCHAR(100),
-    author            VARCHAR(50),
-    keywords          VARCHAR(500)
+    author            BIGINT,
+    keywords          VARCHAR(500),
+    FOREIGN KEY (author) REFERENCES recruiter (id)
 );
 
 DROP TABLE IF EXISTS jobseeker_offer;

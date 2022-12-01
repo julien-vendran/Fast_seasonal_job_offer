@@ -58,8 +58,8 @@ public class OfferEntity {
     @Column(name = "zones", length = 100, nullable = false)
     private String zones;
 
-    @Column(name = "author", length = 100, nullable = false)
-    private String author;
+    @Column(name = "author", nullable = false)
+    private Long author;
 
     @Column(name = "keywords", length = 500, nullable = false)
     private String keywords;

@@ -14,7 +14,6 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @RequestMapping("/api/offer")
 @RestController
-@CrossOrigin
 public class OfferController {
 
     private final OfferService offerService;
