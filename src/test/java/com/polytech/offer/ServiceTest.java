@@ -26,7 +26,7 @@ public class ServiceTest {
 
     @MockBean
     private OfferRepository offerRepository;
-
+/*
     @Test
     @DisplayName("Test find by id success")
     public void testFindByIdSuccess(){
@@ -73,5 +73,5 @@ public class ServiceTest {
         OfferEntity returnedOffer = offerService.createOrUpdate(mockOffer);
 
         Assertions.assertNotNull(returnedOffer, "saved offer should be not null");
-    }
+    }*/
 }

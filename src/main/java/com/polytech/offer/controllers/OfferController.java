@@ -1,14 +1,11 @@
 package com.polytech.offer.controllers;
 
+import com.polytech.offer.entity.JobSeekerEntity;
 import com.polytech.offer.entity.OfferEntity;
 import com.polytech.offer.services.OfferService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.security.RolesAllowed;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -27,9 +24,19 @@ public class OfferController {
     public Optional<OfferEntity> getById(@PathVariable Long id){
         return offerService.getById(id);
     }
+
+    @GetMapping("getByAuthor/{id}")
+    public Iterable<OfferEntity> getByAuthor(@PathVariable Long id){
+        return offerService.getByAuthor(id);
+    }
     @PostMapping()
     public OfferEntity createOrUpdate(@RequestBody OfferEntity offerEntity){
         return offerService.createOrUpdate(offerEntity);
+    }
+
+    @GetMapping("getJsByOffer/{id}")
+    public Iterable<JobSeekerEntity> getJsByOffer(@PathVariable Long id){
+        return offerService.getJsAssociateToOffer(id);
     }
 
     @DeleteMapping("/{id}")
