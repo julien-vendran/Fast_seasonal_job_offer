@@ -43,8 +43,8 @@ public class OfferEntity {
     @Column(name = "region", length = 100, nullable = false)
     private String region;
 
-    @Column(name = "jobnumber")
-    private Integer jobnumber;
+    @Column(name = "job_number")
+    private Integer jobNumber;
 
     @Column(name = "salary", nullable = false)
     private Double salary;
