@@ -8,6 +8,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
@@ -63,5 +65,16 @@ public class OfferEntity {
 
     @Column(name = "keywords", length = 500, nullable = false)
     private String keywords;
+
+    @ManyToMany
+    @JoinTable(
+            name = "jobseeker_offer",
+            joinColumns = @JoinColumn(name = "offer_id"),
+            inverseJoinColumns = @JoinColumn(name = "jobseeker_id"))
+    private Set<JobSeekerEntity> jobSeekers;
+
+    public Set<JobSeekerEntity> getJobSeekers() {
+        return jobSeekers == null ? new HashSet<>() : jobSeekers;
+    }
 }
 

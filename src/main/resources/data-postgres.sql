@@ -76,6 +76,7 @@ CREATE TABLE jobseeker_offer
 (
     jobseeker_id BIGINT,
     offer_id     BIGINT,
+    approved  BOOLEAN DEFAULT FALSE,
     FOREIGN KEY (jobseeker_id) REFERENCES jobseeker (id),
     FOREIGN KEY (offer_id) REFERENCES offer (id),
     PRIMARY KEY (jobseeker_id, offer_id)
