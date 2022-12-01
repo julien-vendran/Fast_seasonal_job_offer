@@ -18,7 +18,8 @@ public class OfferModel {
     private String description;
     private Date publishDay;
     private Date jobStartingDate;
-    private String location;
+    private String city;
+    private String region;
     private Integer jobNumber;
     private Double salary;
     private String advantages;
